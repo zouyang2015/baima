@@ -1,0 +1,117 @@
+/* 共通css */
+/*
+Variables
+*/
+:root {
+  --line-size: 4px;
+}
+/*
+Base layout
+*/
+* {
+  box-sizing: border-box;
+}
+body,
+html {
+  height: 100%;
+  line-height: 1;
+  font-family: 'PingFang SC', 'STHeitiSC-Light', 'Helvetica-Light', arial,
+    sans-serif, 'Droid Sans Fallback';
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* .my-dialog */
+.my-dialog {
+  width: 50%;
+  height: 300px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2000;
+  background: url('../../svg/dialog.svg') no-repeat;
+  background-size: 100% 100%;
+  transform-origin: -20% -20%;
+  box-sizing: border-box;
+  padding: 45px 83px 0 43px;
+}
+.my-dialog .title {
+  font-size: 24px;
+  text-shadow: 0 0 4px #0bffd2;
+  color: #ffffff;
+  padding: 0 0 13px 85px;
+}
+.my-dialog .dialog-inner {
+  width: 100%;
+  height: 170px;
+  margin: 0 20px 0 20px;
+  box-sizing: border-box;
+  display: flex;
+}
+.dialog-country {
+  flex: 0 0 150px;
+  width: 150px;
+  margin-right: 20px;
+}
+.dialog-country ul {
+  margin-top: 2px;
+}
+.dialog-country ul li {
+  font-size: 14px;
+  margin-top: 2px;
+}
+.dialog-info {
+  flex: 1;
+  background-color: #2fa8ec;
+  height: 170px;
+  overflow: auto;
+}
+@keyframes myZoomIn {
+  from {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+.myZoomIn {
+  -webkit-animation: myZoomIn 0.4s !important;
+  animation: myZoomIn 0.4s !important;
+}
+@keyframes myZoomOut {
+  from {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.myZoomOut {
+  -webkit-animation: myZoomOut 0.5s !important;
+  animation: myZoomOut 0.5s !important;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  width: 100%;
+  height: auto;
+  background: rgba(0, 0, 0, 0.9);
+  background-size: cover;
+  /*background: #ffffff;*/
+}
