@@ -9,7 +9,12 @@ import router from './router'
 import 'common/styles/index.scss'
 import 'animate.css'
 
-Vue.use(ElementUI)
+import i18n from './lang'
+
+Vue.use(ElementUI, {
+  size: 'medium', // set element-ui default size
+  i18n: (key, value) => i18n.t(key, value)
+})
 
 import './permission' // permission control
 
@@ -22,5 +27,6 @@ new Vue({
   el: '#app',
   router,
   store,
+  i18n,
   render: h => h(App)
 })

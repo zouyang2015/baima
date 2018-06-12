@@ -2,6 +2,13 @@
   <div class="baima-container">
     <advert></advert>
     <div class="login-container">
+      <language></language>
+      <el-form class="login-form" autoComplete="on" :model="loginForm" :rules="loginRules" ref="loginForm"
+               label-position="left">
+        <el-form-item prop="username">
+          <el-input name="username" type="text" v-model="loginForm.username" :placeholder="$t('login.telOrEmail')"/>
+        </el-form-item>
+      </el-form>
     </div>
   </div>
 
@@ -35,12 +42,13 @@
 </template>
 
 <script>
-import {isvalidUsername} from 'common/js/validate'
-import advert from 'base/advert'
+import { isvalidUsername } from 'common/js/validate'
+import Advert from 'base/advert'
+import Language from 'base/language'
 
 export default {
   name: 'login',
-  data() {
+  data () {
     const validateUsername = (rule, value, callback) => {
       if (!isvalidUsername(value)) {
         callback(new Error('请输入正确的用户名'))
@@ -57,7 +65,7 @@ export default {
     }
     return {
       loginForm: {
-        username: 'admin',
+        username: '',
         password: 'admin'
       },
       loginRules: {
@@ -69,14 +77,14 @@ export default {
     }
   },
   methods: {
-    showPwd() {
+    showPwd () {
       if (this.pwdType === 'password') {
         this.pwdType = ''
       } else {
         this.pwdType = 'password'
       }
     },
-    handleLogin() {
+    handleLogin () {
       this.$refs.loginForm.validate(valid => {
         if (valid) {
           console.log(111)
@@ -95,7 +103,8 @@ export default {
     }
   },
   components: {
-    advert
+    Advert,
+    Language
   }
 }
 
@@ -150,20 +159,21 @@ $light_gray: #eee;
   .login-container {
     flex: 1;
   }
+  .login-form {
+    position: absolute;
+    left: 50%;
+    right: 0;
+    top: 50%;
+    width: 366px;
+    margin: 0 auto;
+  }
 }
 
 .login-container {
   /*position: fixed;*/
   /*height: 100%;*/
   /*width: 100%;*/
-  .login-form {
-    position: absolute;
-    left: 0;
-    right: 0;
-    width: 520px;
-    padding: 35px 35px 15px 35px;
-    margin: 120px auto;
-  }
+
   .svg-container {
     padding: 6px 5px 6px 15px;
     color: $dark_gray;

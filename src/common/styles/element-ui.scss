@@ -1,0 +1,10 @@
+// 覆盖一些element-ui样式
+@import "common/styles/variable.scss";
+
+.el-dropdown {
+  color: $gray;
+}
+
+.el-form-item__content {
+
+}

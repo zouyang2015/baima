@@ -2,8 +2,8 @@
   <div class="advert">
     <div class="logo-text"><img src="../images/text-logo_text.png" alt=""></div>
     <div class="logo"><img src="../images/img-logo.png" alt=""></div>
-    <p class="slogan">视频 • 加速 • 通道 • 企业级</p>
-    <strong>本产品为专属加速应用<br>不支持中国大陆向海外的翻墙服务，感谢支持！</strong>
+    <p class="slogan">{{$t('common.slogan')}}</p>
+    <strong v-html="$t('common.introduction')"></strong>
   </div>
 </template>
 
@@ -35,7 +35,8 @@ export default {
   .logo {
     position: absolute;
     top: 66px;
-    left: 32px;
+    width: 100%;
+    text-align: center;
   }
   .slogan {
     position: absolute;
@@ -51,6 +52,7 @@ export default {
     font-size: 12px;
     text-align: center;
     line-height: 20px;
+    color: $gray_introduction;
   }
 }
 </style>

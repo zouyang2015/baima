@@ -46,8 +46,5 @@ export default {
   left: 0;
   width: 100%;
   display: flex;
-  background: $bg;
-  color: $white;
-  height: $headerHeight;
 }
 </style>

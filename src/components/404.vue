@@ -5,8 +5,6 @@
 </template>
 
 <script>
-import Scroll from 'base/scroll'
-
 export default {
   data() {
     return {}
@@ -20,7 +18,6 @@ export default {
   destroyed() {
   },
   components: {
-    Scroll
   }
 }
 </script>

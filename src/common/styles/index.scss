@@ -19,6 +19,8 @@ html {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  min-height: 600px;
+  min-width: 842px;
 }
 // layout
 .app-wrapper {
@@ -28,101 +30,5 @@ html {
   width: 100%;
 }
 // 侧边栏
-.sidebar-container {
-  background: $light_gray;
-  transition: width 0.28s;
-  width: $sidebarWidth !important;
-  height: calc(100% - $headerHeight);
-  position: fixed;
-  font-size: 12px;
-  top: $headerHeight;
-  bottom: 0;
-  left: 0;
-  z-index: 1001;
-  overflow: hidden;
-  //reset element-ui css
-  .horizontal-collapse-transition {
-    transition: 0s width ease-in-out, 0s padding-left ease-in-out, 0s padding-right ease-in-out;
-  }
-  .scrollbar-wrapper {
-    height: calc(100% + 15px);
-    .el-scrollbar__view {
-      height: 100%;
-    }
-  }
-  .is-horizontal {
-    display: none;
-  }
-  a {
-    display: inline-block;
-    width: 100%;
-    overflow: hidden;
-  }
-  .svg-icon {
-    margin-right: 16px;
-  }
-  .side-bar {
-    border: none;
-    height: 100%;
-    width: 100% !important;
-  }
-}
-.withoutAnimation {
-  .main-container,
-  .sidebar-container {
-    transition: none;
-  }
-}
+
 // 主体区域
-.main-container {
-  position: fixed;
-  top: $headerHeight;
-  right: 0;
-  //width: calc(100% - 300px);
-  width: 100%;
-  height: calc(100% - 80px);
-  transition: margin-left .28s;
-  margin-left: $sidebarWidth;
-  padding: 20px;
-  background: $light_gray;
-}
-.app-main {
-  width: 100% !important;
-  height: 100%;
-  background: #ffffff;
-  //border: 1px solid $bg;
-  border-radius: 10px;
-}
-.title-wrapper {
-  line-height: 20px;
-  border-bottom: 1px solid $blue-simple;
-  padding: 10px 0 10px 20px;
-  color: $blue-simple;
-}
-.app-container {
-  height: calc(100% - 40px);
-  overflow: hidden;
-  padding: 10px;
-}
-
-
-// element
-.el-select .el-input__inner:focus {
-  border: none;
-  background: rgba(0, 0, 0, 0.3);
-}
-.el-select .el-input.is-focus .el-input__inner {
-  border: none;
-  background: rgba(0, 0, 0, 0.3);
-}
-.el-input--mini .el-input__inner {
-  background: rgba(0, 0, 0, 0.3);
-  color: #fff;
-  border: none;
-}
-.el-button--mini,
-.el-button--mini.is-round {
-  padding: 7px 15px;
-  background: rgba(0, 0, 0, 0.3);
-  color: #fff;
-}
